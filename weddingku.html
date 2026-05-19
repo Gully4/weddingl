@@ -1,0 +1,1115 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Ilham & Tarisa Wedding</title>
+
+<!-- GOOGLE FONT -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Great+Vibes&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<!-- AOS -->
+<link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css"/>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+scroll-behavior:smooth;
+}
+
+body{
+font-family:'Montserrat',sans-serif;
+background:
+linear-gradient(180deg,#020617,#0f172a,#111827,#1e293b);
+color:white;
+overflow-x:hidden;
+}
+
+/* SCROLLBAR */
+
+body::-webkit-scrollbar{
+width:8px;
+}
+
+body::-webkit-scrollbar-thumb{
+background:#d9b26f;
+border-radius:10px;
+}
+
+/* PARTICLE */
+
+#particles{
+position:fixed;
+inset:0;
+pointer-events:none;
+z-index:1;
+overflow:hidden;
+}
+
+.particle{
+position:absolute;
+width:4px;
+height:4px;
+background:rgba(255,255,255,.5);
+border-radius:50%;
+animation:floatParticle linear infinite;
+}
+
+@keyframes floatParticle{
+from{
+transform:translateY(100vh);
+opacity:0;
+}
+to{
+transform:translateY(-10vh);
+opacity:1;
+}
+}
+
+/* LOADER */
+
+#loader{
+position:fixed;
+inset:0;
+background:#020617;
+z-index:999999;
+display:flex;
+align-items:center;
+justify-content:center;
+flex-direction:column;
+}
+
+.loader{
+width:80px;
+height:80px;
+border:4px solid rgba(255,255,255,.1);
+border-top:4px solid #d9b26f;
+border-radius:50%;
+animation:spin 1s linear infinite;
+}
+
+@keyframes spin{
+100%{
+transform:rotate(360deg);
+}
+}
+
+/* OPENING */
+
+#opening-screen{
+position:fixed;
+inset:0;
+z-index:99999;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+background:
+linear-gradient(135deg,#020617,#111827,#312e81);
+transition:1s;
+}
+
+.opening-content h1{
+font-size:90px;
+font-family:'Great Vibes',cursive;
+}
+
+.opening-content p{
+margin:20px 0 35px;
+color:#d9b26f;
+}
+
+.btn{
+display:inline-block;
+padding:16px 40px;
+border-radius:100px;
+text-decoration:none;
+background:
+linear-gradient(135deg,#d9b26f,#fff0c9);
+color:black;
+font-weight:bold;
+transition:.4s;
+cursor:pointer;
+border:none;
+}
+
+.btn:hover{
+transform:translateY(-5px);
+}
+
+/* HERO */
+
+.hero{
+height:100vh;
+position:relative;
+display:flex;
+align-items:center;
+justify-content:center;
+overflow:hidden;
+text-align:center;
+}
+
+.hero video{
+position:absolute;
+width:100%;
+height:100%;
+object-fit:cover;
+filter:brightness(.3);
+}
+
+.hero::before{
+content:'';
+position:absolute;
+inset:0;
+background:
+linear-gradient(to bottom,
+rgba(0,0,0,.2),
+rgba(2,6,23,.9));
+z-index:1;
+}
+
+.hero-content{
+position:relative;
+z-index:5;
+padding:50px 30px;
+max-width:700px;
+border-radius:35px;
+background:rgba(255,255,255,.05);
+backdrop-filter:blur(14px);
+border:1px solid rgba(255,255,255,.1);
+}
+
+.hero h4{
+letter-spacing:5px;
+margin-bottom:20px;
+}
+
+.hero h1{
+font-size:85px;
+font-family:'Cinzel',serif;
+}
+
+.and{
+font-family:'Great Vibes',cursive;
+font-size:55px;
+color:#d9b26f;
+margin:10px 0;
+}
+
+/* SECTION */
+
+section{
+padding:100px 20px;
+position:relative;
+z-index:5;
+}
+
+.container{
+max-width:1200px;
+margin:auto;
+}
+
+.section-title{
+text-align:center;
+margin-bottom:70px;
+}
+
+.section-title span{
+letter-spacing:4px;
+color:#d9b26f;
+}
+
+.section-title h2{
+font-size:60px;
+margin-top:15px;
+font-family:'Cinzel',serif;
+}
+
+.section-title p{
+max-width:700px;
+margin:20px auto 0;
+line-height:2;
+color:#ccc;
+}
+
+/* CARD */
+
+.card,
+.story-card,
+.event-card,
+.rsvp-box{
+background:rgba(255,255,255,.05);
+border:1px solid rgba(255,255,255,.08);
+backdrop-filter:blur(12px);
+border-radius:35px;
+transition:.4s;
+}
+
+.card:hover,
+.story-card:hover,
+.event-card:hover{
+transform:translateY(-10px);
+box-shadow:0 20px 50px rgba(0,0,0,.3);
+}
+
+/* COUPLE */
+
+.couple-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:40px;
+}
+
+.card{
+padding:45px 30px;
+text-align:center;
+}
+
+.card img{
+width:220px;
+height:220px;
+object-fit:cover;
+border-radius:50%;
+border:5px solid #d9b26f;
+margin-bottom:25px;
+}
+
+.card h3{
+font-size:45px;
+margin-bottom:15px;
+font-family:'Cinzel',serif;
+}
+
+.card p{
+line-height:2;
+color:#ddd;
+}
+
+/* STORY */
+
+.story-wrapper{
+max-width:900px;
+margin:auto;
+display:flex;
+flex-direction:column;
+gap:30px;
+}
+
+.story-card{
+padding:35px;
+}
+
+.story-card h3{
+color:#d9b26f;
+margin-bottom:15px;
+font-size:32px;
+font-family:'Cinzel',serif;
+}
+
+.story-card p{
+line-height:2;
+color:#ddd;
+}
+
+/* COUNTDOWN */
+
+.countdown{
+display:flex;
+justify-content:center;
+flex-wrap:wrap;
+gap:25px;
+}
+
+.count-box{
+width:150px;
+height:150px;
+display:flex;
+align-items:center;
+justify-content:center;
+flex-direction:column;
+border-radius:30px;
+background:rgba(255,255,255,.05);
+border:1px solid rgba(255,255,255,.08);
+backdrop-filter:blur(12px);
+}
+
+.count-box h3{
+font-size:55px;
+color:#d9b26f;
+}
+
+/* EVENT */
+
+.event-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+gap:35px;
+}
+
+.event-card{
+padding:45px;
+text-align:center;
+}
+
+.event-card h3{
+font-size:38px;
+margin-bottom:20px;
+color:#d9b26f;
+font-family:'Cinzel',serif;
+}
+
+.event-card p{
+line-height:2;
+color:#ddd;
+}
+
+/* MAP */
+
+iframe{
+width:100%;
+border:none;
+border-radius:30px;
+margin-top:50px;
+}
+
+/* RSVP */
+
+.rsvp-box{
+max-width:800px;
+margin:auto;
+padding:50px;
+}
+
+form{
+display:flex;
+flex-direction:column;
+gap:20px;
+}
+
+input,
+textarea,
+select{
+padding:18px;
+border:none;
+border-radius:18px;
+background:rgba(255,255,255,.08);
+color:white;
+outline:none;
+}
+
+textarea{
+resize:none;
+}
+
+/* MUSIC */
+
+.music-btn{
+position:fixed;
+right:25px;
+bottom:25px;
+width:65px;
+height:65px;
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+background:
+linear-gradient(135deg,#d9b26f,#fff0c9);
+color:black;
+font-size:24px;
+cursor:pointer;
+z-index:9999;
+animation:spin 8s linear infinite;
+}
+
+/* FOOTER */
+
+footer{
+padding:40px 20px;
+text-align:center;
+color:#aaa;
+border-top:1px solid rgba(255,255,255,.08);
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+.hero h1{
+font-size:55px;
+}
+
+.section-title h2{
+font-size:38px;
+}
+
+.opening-content h1{
+font-size:65px;
+}
+
+.card img{
+width:180px;
+height:180px;
+}
+
+.count-box{
+width:120px;
+height:120px;
+}
+
+}
+
+</style>
+</head>
+<body>
+
+<!-- PARTICLES -->
+<div id="particles"></div>
+
+<!-- LOADER -->
+<div id="loader">
+<div class="loader"></div>
+<p style="margin-top:20px;color:#d9b26f;">
+MEMUAT UNDANGAN...
+</p>
+</div>
+
+<!-- OPENING -->
+<div id="opening-screen">
+
+<div class="opening-content">
+
+<h4>THE WEDDING OF</h4>
+
+<h1>Ilham & Tarisa</h1>
+
+<p id="guest-name"></p>
+
+<button class="btn" onclick="openInvitation()">
+BUKA UNDANGAN
+</button>
+
+</div>
+
+</div>
+
+<!-- HERO -->
+<section class="hero">
+
+<video autoplay muted loop playsinline>
+<source src="https://assets.mixkit.co/videos/preview/mixkit-wedding-couple-kissing-5114-large.mp4" type="video/mp4">
+</video>
+
+<div class="hero-content">
+
+<h4>THE WEDDING OF</h4>
+
+<h1>Ilham</h1>
+
+<div class="and">&</div>
+
+<h1>Tarisa</h1>
+
+<p>27 - 28 DESEMBER 2026</p>
+
+</div>
+
+</section>
+
+<!-- MEMPELAI -->
+<section>
+
+<div class="container">
+
+<div class="section-title">
+<span>MEMPELAI</span>
+
+<h2>Pasangan Pengantin</h2>
+
+<p>
+Dengan memohon rahmat dan ridho Allah SWT,
+kami bermaksud menyelenggarakan pernikahan kami.
+</p>
+
+</div>
+
+<div class="couple-grid">
+
+<!-- WANITA -->
+
+<div class="card">
+
+<img src="https://raw.githubusercontent.com/zaki178/bot-lu/refs/heads/main/img/IMG-20260412-WA0053.jpg">
+
+<h3>Muhammad Ilham Agus Dwi Cahyono</h3>
+
+<p>
+
+Putra dari
+
+<br><br>
+
+Bapak Totok Prasetyo Juwono
+<br>
+& Ibu Su'uddyah
+
+</p>
+
+</div>
+
+<!-- PRIA -->
+
+<div class="card">
+
+<img src="https://raw.githubusercontent.com/zaki178/bot-lu/refs/heads/main/img/IMG_20260412_103234.jpg">
+
+<h3>Tarisa Nur Salsabilah</h3>
+
+<p>
+
+Putri dari
+
+<br><br>
+
+Bapak Sumardi
+<br>
+& Ibu Jubaidah
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- LOVE STORY -->
+<section>
+
+<div class="container">
+
+<div class="section-title">
+<span>OUR STORY</span>
+<h2>Love Story</h2>
+</div>
+
+<div class="story-wrapper">
+
+<div class="story-card">
+<h3>Pertama Bertemu</h3>
+<p>Kami bertemu pertama kali pada tahun 2021.</p>
+</div>
+
+<div class="story-card">
+<h3>Menjalin Hubungan</h3>
+<p>Kami mulai saling mengenal dan menjalin hubungan serius.</p>
+</div>
+
+<div class="story-card">
+<h3>Tunangan</h3>
+<p>Pada tahun 2025 kami melangsungkan pertunangan.</p>
+</div>
+
+<div class="story-card">
+<h3>Hari Bahagia</h3>
+<p>Kini kami siap menuju jenjang pernikahan.</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- COUNTDOWN -->
+<section>
+
+<div class="container">
+
+<div class="section-title">
+<span>COUNTDOWN</span>
+<h2>Menuju Hari Bahagia</h2>
+</div>
+
+<div class="countdown">
+
+<div class="count-box">
+<h3 id="days">00</h3>
+<span>Hari</span>
+</div>
+
+<div class="count-box">
+<h3 id="hours">00</h3>
+<span>Jam</span>
+</div>
+
+<div class="count-box">
+<h3 id="minutes">00</h3>
+<span>Menit</span>
+</div>
+
+<div class="count-box">
+<h3 id="seconds">00</h3>
+<span>Detik</span>
+</div>
+
+<!-- SAVE THE DATE -->
+
+<div class="save-date" data-aos="fade-up">
+
+<h2 style="
+font-family:'Cinzel',serif;
+margin-bottom:15px;
+font-size:42px;
+">
+Save The Date
+</h2>
+
+<p style="
+color:#ccc;
+line-height:2;
+max-width:700px;
+margin:auto;
+">
+Simpan tanggal spesial kami
+langsung ke Google Calendar Anda.
+</p>
+
+<a
+class="btn"
+target="_blank"
+href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Pernikahan+Tarisa+dan+Ilham&dates=20261227T010000Z/20261227T050000Z&details=Wedding+Tarisa+dan+Ilham&location=Rumah+Mempelai+Wanita"
+style="margin-top:30px;"
+>
+SAVE TO CALENDAR
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- EVENT -->
+
+<section id="event">
+
+<div class="container">
+
+<div class="section-title" data-aos="fade-up">
+
+<span>WEDDING EVENT</span>
+
+<h2>Akad & Resepsi</h2>
+
+<p>
+Dengan memohon rahmat dan ridho Allah SWT,
+kami mengundang Bapak/Ibu/Saudara/i
+untuk hadir pada acara pernikahan kami.
+</p>
+
+</div>
+
+<div class="event-grid">
+
+<!-- AKAD -->
+
+<div class="event-card" data-aos="fade-right">
+
+<h3>Akad Nikah</h3>
+
+<p>
+
+Minggu,
+27 Desember 2026
+
+<br><br>
+
+Pukul 08.00 WIB
+
+<br><br>
+
+Rumah Mempelai Wanita
+
+<br>
+
+Tarisa Nur Salsabilah
+
+</p>
+
+<a
+href="https://maps.app.goo.gl/BqCmvJi3vUAt3rfT8"
+target="_blank"
+class="btn"
+style="margin-top:25px;"
+>
+Buka Lokasi
+</a>
+
+</div>
+
+<!-- RESEPSI -->
+
+<div class="event-card" data-aos="fade-left">
+
+<h3>Resepsi</h3>
+
+<p>
+
+Senin,
+28 Desember 2026
+
+<br><br>
+
+Pukul 10.00 WIB
+s/d selesai
+
+<br><br>
+
+Rumah Mempelai Pria
+
+<br>
+
+Muhammad Ilham Agus Dwi Cahyono
+
+</p>
+
+<a
+href="https://maps.app.goo.gl/BqCmvJi3vUAt3rfT8"
+target="_blank"
+class="btn"
+style="margin-top:25px;"
+>
+Buka Lokasi
+</a>
+
+</div>
+
+</div>
+
+<!-- GOOGLE MAP EMBED -->
+
+<div style="margin-top:60px;" data-aos="zoom-in">
+
+<iframe
+src="https://www.google.com/maps?q=-7.5361,112.2381&hl=id&z=15&output=embed"
+height="450"
+style="
+width:100%;
+border:none;
+border-radius:30px;
+box-shadow:0 20px 50px rgba(0,0,0,.3);
+">
+</iframe>
+
+</div>
+
+</div>
+
+</section>
+<!-- RSVP -->
+<section>
+
+<div class="container">
+
+<div class="section-title">
+<span>RSVP</span>
+<h2>Konfirmasi Kehadiran</h2>
+</div>
+
+<div class="rsvp-box">
+
+<form id="rsvpForm">
+
+<input type="text" id="nama" placeholder="Nama Lengkap" required>
+
+<select id="hadir" required>
+<option value="">Konfirmasi Kehadiran</option>
+<option value="Hadir">Hadir</option>
+<option value="Tidak Hadir">Tidak Hadir</option>
+</select>
+
+<textarea id="ucapan" rows="5" placeholder="Ucapan dan doa"></textarea>
+
+<button type="submit" class="btn">
+KIRIM RSVP
+</button>
+
+<div id="status"></div>
+
+</form>
+
+</div>
+
+</div>
+
+</section>
+
+<footer>
+© 2026 Wedding Invitation  Ilham & Tarisa
+</footer>
+
+<!-- MUSIC -->
+<div class="music-btn" onclick="toggleMusic()">
+♫
+</div>
+
+<audio id="music" loop>
+<source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_c8c8e0f6a8.mp3?filename=wedding-110624.mp3">
+</audio>
+
+<!-- AOS -->
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+<script>
+
+/* =========================
+AOS
+========================= */
+
+AOS.init({
+duration:1200,
+once:true
+});
+
+/* =========================
+LOADER
+========================= */
+
+window.addEventListener('load',()=>{
+
+setTimeout(()=>{
+
+const loader =
+document.getElementById('loader');
+
+loader.style.opacity='0';
+
+setTimeout(()=>{
+loader.style.display='none';
+},1000);
+
+},1200);
+
+});
+
+/* =========================
+PARTICLES
+========================= */
+
+for(let i=0;i<60;i++){
+
+const particle =
+document.createElement('div');
+
+particle.classList.add('particle');
+
+particle.style.left =
+Math.random()*100+'%';
+
+particle.style.animationDuration =
+(5+Math.random()*10)+'s';
+
+particle.style.animationDelay =
+Math.random()*5+'s';
+
+document.getElementById('particles')
+.appendChild(particle);
+
+}
+
+/* =========================
+GUEST NAME
+========================= */
+
+const urlParams =
+new URLSearchParams(window.location.search);
+
+const guest =
+urlParams.get('to');
+
+if(guest){
+
+document.getElementById('guest-name')
+.innerHTML =
+'Kepada Yth.<br><b>'+decodeURIComponent(guest)+'</b>';
+
+}
+
+/* =========================
+MUSIC
+========================= */
+
+const music =
+document.getElementById('music');
+
+music.volume = 0.7;
+
+function playMusic(){
+
+const playPromise = music.play();
+
+if(playPromise !== undefined){
+
+playPromise
+.then(()=>{})
+.catch(()=>{});
+
+}
+
+}
+
+function toggleMusic(){
+
+if(music.paused){
+
+music.play();
+
+}else{
+
+music.pause();
+
+}
+
+}
+
+/* =========================
+OPEN INVITATION
+========================= */
+
+function openInvitation(){
+
+const opening =
+document.getElementById('opening-screen');
+
+opening.style.opacity='0';
+
+setTimeout(()=>{
+opening.style.display='none';
+},1000);
+
+playMusic();
+
+}
+
+/* =========================
+AUTOPLAY FIX
+========================= */
+
+document.body.addEventListener('click',()=>{
+
+playMusic();
+
+},{ once:true });
+
+/* =========================
+COUNTDOWN
+========================= */
+
+const targetDate =
+new Date("December 27, 2026 08:00:00").getTime();
+
+const countdown = setInterval(()=>{
+
+const now =
+new Date().getTime();
+
+const distance =
+targetDate - now;
+
+if(distance < 0){
+
+clearInterval(countdown);
+
+document.getElementById('days').innerHTML='00';
+document.getElementById('hours').innerHTML='00';
+document.getElementById('minutes').innerHTML='00';
+document.getElementById('seconds').innerHTML='00';
+
+return;
+
+}
+
+document.getElementById('days').innerHTML =
+Math.floor(distance/(1000*60*60*24));
+
+document.getElementById('hours').innerHTML =
+Math.floor((distance%(1000*60*60*24))/(1000*60*60));
+
+document.getElementById('minutes').innerHTML =
+Math.floor((distance%(1000*60*60))/(1000*60));
+
+document.getElementById('seconds').innerHTML =
+Math.floor((distance%(1000*60))/1000);
+
+},1000);
+
+/* =========================
+RSVP
+========================= */
+
+const form =
+document.getElementById('rsvpForm');
+
+form.addEventListener('submit',(e)=>{
+
+e.preventDefault();
+
+const nama =
+document.getElementById('nama').value;
+
+const hadir =
+document.getElementById('hadir').value;
+
+const ucapan =
+document.getElementById('ucapan').value;
+
+const status =
+document.getElementById('status');
+
+if(nama==='' || hadir===''){
+
+status.innerHTML =
+'<p style="color:#ffb3b3;">Mohon lengkapi data</p>';
+
+return;
+
+}
+
+status.innerHTML =
+'<p style="color:#d9b26f;">Mengirim RSVP...</p>';
+
+/* WHATSAPP */
+
+const nomor='6289539943464';
+
+const pesan =
+`Halo, saya ${nama}
+Konfirmasi: ${hadir}
+Ucapan: ${ucapan}`;
+
+window.open(
+`https://wa.me/${nomor}?text=${encodeURIComponent(pesan)}`,
+'_blank'
+);
+
+status.innerHTML =
+'<p style="color:#86efac;">RSVP berhasil dikirim ❤️</p>';
+
+form.reset();
+
+});
+
+</script>
+
+</body>
+</html>
